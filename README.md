@@ -13,6 +13,11 @@ using the finite difference code.
 The source code is in cuda/hip or machine generated cuda/hip by the eps 
 [Eps](https://github.com/barntsen/Wavebench) transpiler.
 
+Below is a figure showing the performance of acoustic wave simulation
+on GH200 using 
+
+![solvertime-gh200.png]
+
 ## Directories
 
 The file tree is organized as shown below
