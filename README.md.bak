@@ -1,50 +1,25 @@
-# Wavebench - Performance and Portability of Seismic Visco Acoustic wave simulation  
+# Wavebench - GPU portability benchmark for NVIDA/AMD
 
 ## Overview
 
-![Run times for GH200. Black line is machine generated cuda,
-  red line is hand coded cuda with manual memory management, 
-  while blue line is hand coded cuda with unified 
-  memory management](solvertime-gh200.png)
-
 Wavebench is a set of benchmark programs to measure the
-efficiency and portability of machine generated cuda/hip code
+efficiency of machine generated cuda/hip code
 relative to hand coded cuda/hip.
-
-Machine generated cuda/hip is made via eps, a small Domain Specific Languge.
-The main idea is to use the same source code for different architectures.
-Parallelization is handled by a parallel construct (aka fortran doconcurrent)
-as in
-
-```
-# Faxpy is a simple matrix addition test
-
-def int faxpy2d(float [*,*] a, float [*,*] x, float [*,*] y, float b):
- int i,j
- int nx,ny
-
- nx=len(x,0)
- ny=len(x,1)
-
- parallel(i=0:nx,j=0:ny):
-   a[i,j] = b*y[i,j]+x[i,j]
-```
-
-There are also tests for manual memory management and
-unified (automatic) memory management.
+There are also tests for manual memory managment and
+unified (automatic) memory managment.
 The benchmarks contain tests relevant for elastic wave simulations
 using the finite difference code.
 
 The source code is in cuda/hip or machine generated cuda/hip by the eps 
 [Eps](https://github.com/barntsen/Wavebench) transpiler.
 
-Above is a figure showing the performance of acoustic wave simulation
-on GH200.  
+Below is a figure showing the performance of acoustic wave simulation
+on GH200 using 
 
-![Run times for GH200. Black line is machine generated cuda,
-  red line is hand coded cuda with manual memory management, 
+![Run times for GH200. Black line is machine generated cuad,
+  red line is hand coded cuda with manual memory managment, 
   while blue line is hand coded cuda with unified 
-  memory management](solvertime-gh200.png)
+  memory managment](solvertime-gh200.png)
 
 ## Directories
 

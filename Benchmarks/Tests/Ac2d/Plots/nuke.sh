@@ -1,3 +1,3 @@
 #!/bin/sh
  
-rm -f *.pdf
+rm -f *.pdf *.png
