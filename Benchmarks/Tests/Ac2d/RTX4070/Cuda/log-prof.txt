@@ -1,0 +1,9 @@
+8192
+8192
+1501
+54.343750
+65.406250
+Generating '/tmp/nsys-report-443b.qdstrm'
+[1/1] [0%                          ] report1.nsys-rep[1/1] [0%                          ] report1.nsys-rep[1/1] [==20%                       ] report1.nsys-rep[1/1] [========41%                 ] report1.nsys-rep[1/1] [5%                          ] report1.nsys-rep[1/1] [6%                          ] report1.nsys-rep[1/1] [7%                          ] report1.nsys-rep[1/1] [8%                          ] report1.nsys-rep[1/1] [9%                          ] report1.nsys-rep[1/1] [10%                         ] report1.nsys-rep[1/1] [11%                         ] report1.nsys-rep[1/1] [12%                         ] report1.nsys-rep[1/1] [6%                          ] report1.nsys-rep[1/1] [=======38%                  ] report1.nsys-rep[1/1] [================71%         ] report1.nsys-rep[1/1] [==================77%       ] report1.nsys-rep[1/1] [========================100%] report1.nsys-rep[1/1] [========================100%] report1.nsys-rep
+Generated:
+    /home/barn/Dropbox/Projects/Gpuport/Tests/Geforce/Cuda/report1.nsys-rep

@@ -1,0 +1,114 @@
+% Template for presentation
+\documentclass[xcolor=dvipsnames]{beamer}
+\usecolortheme[named=Brown]{structure}   %Brown color scheme
+\setbeamertemplate{navigation symbols}{} %No navigation clutter
+\usepackage{tikz}
+\usetikzlibrary{arrows,decorations.pathmorphing,backgrounds,positioning,fit}
+\usetikzlibrary{datavisualization.formats.functions}
+\usetikzlibrary{patterns}
+%\include{macro}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{multimedia}
+\begin{document}
+\include{macro}
+%==============================================================================
+\title{Status HPC projects}
+\author{B. Arntsen } 
+\institute[NTNU]{
+  NTNU\\
+  Department of Geoscience and petroleum \\
+  \texttt{borge.arntsen@ntnu.no}
+}
+\date{October 2023}
+\begin{frame}
+ \titlepage
+\end{frame}
+%==============================================
+%---------------------------------------------------
+\begin{frame}{HPC Projects}
+%--------------------------------------------------
+\begin{enumerate}
+  \item Simulation of ship noise (EU) start 2024
+  \item Inversion of the earths crust in the pacific 
+  \item Inversion of the Mantel (North Atlantic)
+\end{enumerate}  
+\end{frame}
+%---------------------------------------------------
+\begin{frame}{EU SEASOUNDS}
+%--------------------------------------------------
+\begin{itemize}
+  \item Large scale simulation of noise propagation
+	in isfjorden, Svalbard.
+  \item Software: SPECFEM 3D public domain
+  \item OpenCL, do not expect problems using the LUMI GPU cluster
+  \item Recruiting PhD, expect start in Q3.
+\end{itemize}
+\end{frame}
+%---------------------------------------------------
+\begin{frame}{Inversion of pacific crust}
+%--------------------------------------------------
+\begin{columns}
+\column{0.5\textwidth}
+\begin{itemize}
+  \item Rockseis software			
+  \item C++ 120k+ codelines
+  \item Port to multiple GPU architectures
+  \item Single source + Out of bounds check etc..
+  \item Language/Compilers with GPU accelleration
+	      and standard language
+  \item Domain Specific Language
+  \item Unified memory
+  \item Initial port of mini application
+\end{itemize}
+\column{0.5\textwidth}
+\includegraphics[width=0.5\textwidth]{Fig_fwi_4Hz_OK}
+\includegraphics[width=0.5\textwidth]{map}
+\end{columns}
+\end{frame}
+%----------------------------------------------
+\begin{frame}{Mini application}
+%-----------------------------------------------
+\begin{center}
+\movie[height = 0.6\textwidth, width = 0.8\textwidth, showcontrols] {Video}{fig-1.mp4}
+\end{center} 
+\end{frame}
+%----------------------------------------------
+\begin{frame}{Mini application}
+%-----------------------------------------------
+\includegraphics[width=1.0\textwidth]{walltime-geforce}
+\end{frame}
+%----------------------------------------------
+\begin{frame}{Mini application}
+%-----------------------------------------------
+\includegraphics[width=1.0\textwidth]{walltime-a}
+\end{frame}
+%----------------------------------------------
+\begin{frame}{Mini application}
+%-----------------------------------------------
+\includegraphics[width=1.0\textwidth]{walltime}
+\end{frame}
+%----------------------------------------------
+\begin{frame}{Rock Seis GPU port}
+%-----------------------------------------------
+\begin{itemize}
+  \item Time critical parts ported to GPU
+  \item Single source DSL generates C, CUDA or HIP
+	using Unified Memory
+  \item Reasonable speedup vs cpu on A100
+  \item Too slow on Mi250x ?
+\end{itemize}
+\end{frame}
+%----------------------------------------------
+\begin{frame}{Future code development}
+%-----------------------------------------------
+\begin{itemize}
+  \item Python 
+  + Standard Language or DSL with support
+	for GPU acceleration and 
+  \item  Julia ?
+\end{itemize}
+\end{frame}
+\end{document}
+
+

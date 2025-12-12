@@ -1,0 +1,4 @@
+SCons by Steven Knight et al.:
+	SCons: v4.4.0.fc8d0ec215ee6cba8bc158ad40c099be0b598297, Sat, 30 Jul 2022 14:11:34 -0700, by bdbaddog on M1Dog2021
+	SCons path: ['/home/barn/.local/lib/python3.8/site-packages/SCons']
+Copyright (c) 2001 - 2022 The SCons Foundation

@@ -1,0 +1,127 @@
+% Template for presentation
+\documentclass[xcolor=dvipsnames]{beamer}
+\usecolortheme[named=Brown]{structure}   %Brown color scheme
+\setbeamertemplate{navigation symbols}{} %No navigation clutter
+\usepackage{tikz}
+\usetikzlibrary{arrows,decorations.pathmorphing,backgrounds,positioning,fit}
+\usetikzlibrary{datavisualization.formats.functions}
+\usetikzlibrary{patterns}
+%\include{macro}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{multimedia}
+\begin{document}
+\include{macro}
+%==============================================================================
+\title{Status Olivia pilot}
+\author{B. Arntsen } 
+\institute[NTNU]{
+  NTNU\\
+  Department of Geoscience and petroleum \\
+  \texttt{borge.arntsen@ntnu.no}
+}
+\begin{frame}
+ \titlepage
+\end{frame}
+%==============================================
+%---------------------------------------------------
+\begin{frame}{Olivia system}
+%--------------------------------------------------
+\begin{enumerate}
+  \item Used only the Cray default and nvidia environment
+  \item Compilers for AMD/ARM/GH200 (gcc and nvcc) works without problems
+  \item Batch system works without problems for both cpu and gpu jobs
+  \item No change or tweaking of code was necessary
+\end{enumerate}  
+\end{frame}
+%----------------------------------------------
+\begin{frame}{Performance tests}
+%-----------------------------------------------
+\begin{enumerate}
+  \item Measured runtimes for finite-difference wave equation solver  
+        on single GH200 GPU
+  \item Measured runtimes for finite-difference wave equation solver 
+        on 128 core AMD EPYC Turin (omp) 
+  \item Comparison with A100 (Idun) and RTX4070 (Dell Allienware gaming laptop)
+  \item No comparison with LUMI/AMD  (No access to Lumi)  
+\end{enumerate}  
+\end{frame}
+%----------------------------------------------
+\begin{frame}{Codes used for performance test}
+%-----------------------------------------------
+\begin{enumerate}
+  \item Finite-difference wave equation solver in handwritten 
+        CUDA with traditional memory managment
+  \item Finite-difference wave equation solver in handwritten 
+        CUDA with unified  memory managment
+  \item Experimental machine generated finite-difference 
+        wave equation solver (C,Multicore C (omp),Cuda,Hip)
+\end{enumerate}
+\end{frame}
+%----------------------------------------------
+\begin{frame}{Runtime GH200}
+%-----------------------------------------------
+\includegraphics[width=0.8\textwidth]{Figs/solvertime-gh200}
+
+{\tiny Eps: Machine generated cuda\\
+       Cuda: Handwritten cuda with trad memory managment\\
+       Cuda um: Handwritten cuda with unified memory\\
+}
+\end{frame}
+%----------------------------------------------
+\begin{frame}{Speedup GH200/AMD Epyc Turin }
+%-----------------------------------------------
+\includegraphics[width=0.8\textwidth]{Figs/speedup-gh200}
+
+{\tiny Relative to AMD EPYC Turin 128 cores (OpenMP, not optimal)\\
+       Eps: Machine generated cuda\\
+       Cuda: Handwritten cuda with trad memory managment\\
+       Cuda um: Handwritten cuda with unified memory\\
+}
+\end{frame}
+%----------------------------------------------
+\begin{frame}{Runtime A100}
+%-----------------------------------------------
+\includegraphics[width=0.8\textwidth]{Figs/solvertime-a100}
+
+{\tiny Eps: Machine generated cuda\\
+       Cuda: Handwritten cuda with trad memory managment\\
+       Cuda um: Handwritten cuda with unified memory\\
+}
+\end{frame}
+%----------------------------------------------
+\begin{frame}{Runtime RTX4070}
+%-----------------------------------------------
+\includegraphics[width=0.8\textwidth]{Figs/solvertime-rtx4070}
+
+{\tiny Eps: Machine generated cuda\\
+       Cuda: Handwritten cuda with trad memory managment\\
+       Cuda um: Handwritten cuda with unified memory\\
+}
+\end{frame}
+%----------------------------------------------
+\begin{frame}{Performance }
+%-----------------------------------------------
+\begin{itemize}
+  \item Single GH200 GPU on Olivia runs twice as fast as single A100 GPU on Idun
+  \item Speedup relative to AMD EPYC Turin node on Olivia approx 30 for handwritten cuda
+        and approx 20 for machine generated cuda
+  \item Results are preliminary, no tweaking of code
+  \item Machine generated code suboptimal, but fix is known.
+\end{itemize}
+\end{frame}
+%----------------------------------------------
+\begin{frame}{Conclusions}
+%-----------------------------------------------
+\begin{itemize}
+  \item Olivia basic system works without any problems 
+  \item Olivia Documentation sufficient for pilot (No need for additional support)
+  \item Finite-difference wave simulation codes runs twice as fast relative to Idun (A100)
+  \item No penalty for using unified memory
+  \item Implications for research are faster turn-around due to 
+        speed and larger number of gpu's
+\end{itemize}
+\end{frame}
+\end{document}
+
+
