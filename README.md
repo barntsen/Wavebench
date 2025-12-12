@@ -9,7 +9,7 @@
 
 Wavebench is a set of benchmark programs to measure the
 efficiency and portability of machine generated cuda/hip code
-relative to hand coded cuda/hip.
+relative to hand coded cuda/hip for Visco Acoustic Seismic wave simulation.
 
 Machine generated cuda/hip is made via eps, a small Domain Specific Languge.
 The main idea is to use the same source code for different architectures.
@@ -38,7 +38,7 @@ using the finite difference code.
 The source code is in cuda/hip or machine generated cuda/hip by the eps 
 [Eps](https://github.com/barntsen/Wavebench) transpiler.
 
-Above is a figure showing the performance of acoustic wave simulation
+Above is a figure showing the performance of vsico acoustic wave simulation
 on GH200.  
 
 ## Directories
