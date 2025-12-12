@@ -1,11 +1,12 @@
 # Wavebench - Performance and Portability of Seismic Visco Acoustic wave simulation  
 
-## Overview
 
 ![Run times for GH200. Black line is machine generated cuda,
   red line is hand coded cuda with manual memory management, 
   while blue line is hand coded cuda with unified 
   memory management](solvertime-gh200.png)
+
+## Overview
 
 Wavebench is a set of benchmark programs to measure the
 efficiency and portability of machine generated cuda/hip code
