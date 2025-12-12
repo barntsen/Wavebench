@@ -2,39 +2,57 @@
 import numpy as np
 import pylab as pl
 
-def getdata(file) :
+def getdata(file,item,lrec) :
+    ''' getdata reads an ascii file with timing records
+    
+        Parameters:
+          file : File name
+
+        Returns :
+
+    '''
+
     data = np.loadtxt(file)
     n = data.shape[0]
-    nrec=int(n/5)
+    nrec=int(n/lrec)
+    print(nrec)
     x = np.zeros((nrec))
     y = np.zeros((nrec))
     j=0
     for i in range(0,nrec) :
       x[i] = data[j] 
-      y[i] = data[j+3] 
-      j=j+5
+      y[i] = data[j+item] 
+      j=j+lrec
     return(x,y)
 
-path = '../Tests/Mi250x/Eps/'
-file=path+'log.txt'
-x1,y1 = getdata(file)
+# Record lenght 
+lrec=7
+#Get the solver time
+item=5
 
-path = '../Tests/Mi250x/Hip/'
+path = '../Mi250x/Eps/'
+file=path+'log-hip.txt'
+x1,y1 = getdata(file,item,lrec)
+
+path = '../Mi250x/Hip/'
 file=path+'log.txt'
-x2,y2 = getdata(file)
+x2,y2 = getdata(file,item,lrec)
+
+path = '../Mi250x/Hip-um/'
+file=path+'log.txt'
+x3,y3 = getdata(file,item,lrec)
 
 # Plotting
 fig = pl.figure()
 #pl.xticks(np.arange(0,3.1,1))
 x1=x1*x1
 x2=x2*x2
-#x3=x3*x3
-#x4=x4*x4
-#x5=x5*x5
+x3=x3*x3
 pl.xscale("log", base=10)
-pl.yscale("log", base=10)
-l1=pl.plot(x1,y1,label='Eps ',color='black',marker='o',linestyle='solid')
-l2=pl.plot(x2,y2,label='Cuda',color='red',marker='o',linestyle='solid')
+#pl.yscale("log", base=10)
+l1=pl.plot(x1,y1,label='Eps',color='black',marker='o',linestyle='solid')
+l2=pl.plot(x2,y2,label='Hip',color='red',marker='o',linestyle='solid')
+l3=pl.plot(x3,y3,label='Hip um',color='blue',marker='o',linestyle='solid')
 
 pl.legend(loc='upper left')
 pl.xlabel('Model dimension')
