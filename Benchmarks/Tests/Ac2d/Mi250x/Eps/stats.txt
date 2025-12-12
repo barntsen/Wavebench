@@ -1,0 +1,63 @@
+Using report1.sqlite file for stats and reports.
+Exporting [/cluster/apps/eb/software/CUDAcore/11.1.1/nsight-systems-2020.3.4/target-linux-x64/reports/cudaapisum report1.sqlite] to console... 
+
+ Time(%)  Total Time (ns)  Num Calls   Average   Minimum   Maximum           Name         
+ -------  ---------------  ---------  ---------  -------  ---------  ---------------------
+    97.6      20243604914      10510  1926128.0     1182  822992445  cudaDeviceSynchronize
+     2.1        429131472         95  4517173.4     3031  427786332  cudaMallocManaged    
+     0.3         71286919      10507     6784.7     4025     372692  cudaLaunchKernel     
+     0.0           140304          3    46768.0     7081     103128  cudaFree             
+
+Exporting [/cluster/apps/eb/software/CUDAcore/11.1.1/nsight-systems-2020.3.4/target-linux-x64/reports/gpukernsum report1.sqlite] to console... 
+
+ Time(%)  Total Time (ns)  Instances   Average   Minimum   Maximum                                Name                             
+ -------  ---------------  ---------  ---------  -------  ---------  --------------------------------------------------------------
+    25.5       5138830888       1501  3423604.9  2791104  822981640  kernel_Ac2dstress(ac2d*, model*)                              
+    14.9       3004523403       1501  2001681.1  1650239  400171205  kernel_Ac2dvy(ac2d*, model*)                                  
+    14.5       2923264148       1501  1947544.4  1821823   73572854  kernel_DiffDyplus(diff*, nctempfloat2*, nctempfloat2*, float) 
+    14.2       2860466970       1501  1905707.5  1577824  472490236  kernel_Ac2dvx(ac2d*, model*)                                  
+    13.0       2628416114       1501  1751110.0  1739456    1931520  kernel_DiffDyminus(diff*, nctempfloat2*, nctempfloat2*, float)
+     9.2       1862254646       1501  1240676.0  1140928    1298528  kernel_DiffDxminus(diff*, nctempfloat2*, nctempfloat2*, float)
+     8.7       1754276858       1501  1168738.7  1058240   97976851  kernel_DiffDxplus(diff*, nctempfloat2*, nctempfloat2*, float) 
+
+Exporting [/cluster/apps/eb/software/CUDAcore/11.1.1/nsight-systems-2020.3.4/target-linux-x64/reports/gpumemtimesum report1.sqlite] to console... 
+
+ Time(%)  Total Time (ns)  Operations  Average  Minimum  Maximum              Operation            
+ -------  ---------------  ----------  -------  -------  -------  ---------------------------------
+    92.7        458193700      302373   1515.3      993   378851  [CUDA Unified Memory memcpy HtoD]
+     7.3         36092881       37061    973.9      758     3185  [CUDA Unified Memory memcpy DtoH]
+
+Exporting [/cluster/apps/eb/software/CUDAcore/11.1.1/nsight-systems-2020.3.4/target-linux-x64/reports/gpumemsizesum report1.sqlite] to console... 
+
+    Total     Operations  Average  Minimum  Maximum               Operation            
+ -----------  ----------  -------  -------  --------  ---------------------------------
+ 5281164.000      302373   17.466    4.000  1020.000  [CUDA Unified Memory memcpy HtoD]
+  412688.000       37061   11.135    4.000    48.000  [CUDA Unified Memory memcpy DtoH]
+
+Exporting [/cluster/apps/eb/software/CUDAcore/11.1.1/nsight-systems-2020.3.4/target-linux-x64/reports/osrtsum report1.sqlite] to console... 
+
+ Time(%)  Total Time (ns)  Num Calls   Average    Minimum   Maximum        Name     
+ -------  ---------------  ---------  ----------  -------  ---------  --------------
+    53.4     123005174195       4885  25180179.0     1038  114954340  poll          
+    46.2     106449405132       4888  21777701.5    24758  119994034  sem_timedwait 
+     0.2        493099515          6  82183252.5     1490  170488489  read          
+     0.2        355978046        747    476543.6     1087   26713597  ioctl         
+     0.0          2647343         56     47274.0     1297     903471  fopen         
+     0.0          2599408         23    113017.7     1144    2499495  write         
+     0.0          2539352         63     40307.2     3613     946586  mmap64        
+     0.0          1635182          1   1635182.0  1635182    1635182  creat         
+     0.0          1264406         88     14368.2     1003     639228  open64        
+     0.0           849212         18     47178.4     1032     101339  fcntl         
+     0.0           561465         35     16041.9     1007     141783  fclose        
+     0.0           434763          4    108690.8    98226     121773  pthread_create
+     0.0           278954         59      4728.0     1015      41812  mmap          
+     0.0           254349         21     12111.9     4358      23019  fread         
+     0.0            73824          9      8202.7     4600      17324  open          
+     0.0            62971         16      3935.7     1094       7670  munmap        
+     0.0            38418          1     38418.0    38418      38418  fgets         
+     0.0             9022          2      4511.0     3837       5185  socket        
+     0.0             7136          1      7136.0     7136       7136  pipe2         
+     0.0             5363          1      5363.0     5363       5363  connect       
+     0.0             1011          1      1011.0     1011       1011  bind          
+
+Exporting [/cluster/apps/eb/software/CUDAcore/11.1.1/nsight-systems-2020.3.4/target-linux-x64/reports/nvtxppsum report1.sqlite] to console... Exporting [/cluster/apps/eb/software/CUDAcore/11.1.1/nsight-systems-2020.3.4/target-linux-x64/reports/openmpevtsum report1.sqlite] to console... 

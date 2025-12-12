@@ -1,0 +1,7 @@
+Nx : 4001
+Ny : 4001
+Nt : 1501
+Solver time :  1.10e+01
+Wall time   :  1.350e+01
+nbl : 125062
+nth : 128

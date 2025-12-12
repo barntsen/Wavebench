@@ -1,0 +1,7 @@
+Nx : 256
+Ny : 256
+Nt : 1501
+Solver time :  1.0250e+01
+Wall time   :  1.0250e+01
+nbl : 512
+nth : 128
