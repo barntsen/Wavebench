@@ -41,11 +41,6 @@ The source code is in cuda/hip or machine generated cuda/hip by the eps
 Above is a figure showing the performance of acoustic wave simulation
 on GH200.  
 
-![Run times for GH200. Black line is machine generated cuda,
-  red line is hand coded cuda with manual memory management, 
-  while blue line is hand coded cuda with unified 
-  memory management](solvertime-gh200.png)
-
 ## Directories
 
 The file tree is organized as shown below
