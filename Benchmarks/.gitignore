@@ -1,6 +1,0 @@
-#Ignore archive files, object files, c files and cpp files
-
-*.a
-*.o
-*.bin
-*.so

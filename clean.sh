@@ -1,10 +1,5 @@
 #!/bin/sh
 
-cd Paper
+cd Src
   ./clean.sh
 cd ..
-
-cd Presentations
-  ./clean.sh
-cd ..
-

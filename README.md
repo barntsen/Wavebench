@@ -48,58 +48,39 @@ The file tree is organized as shown below
 
 ```
 .
-├── Benchmarks
-│   ├── Bin
-│   │   └── 
-│   ├── Src
-│   │   ├── Ac2d
-│   │   ├── Diff
-│   │   └── Faxpy
-│   └── Tests
-│       ├── Ac2d
-│       ├── Diff
-│       └── Faxpy
-├── Paper
-├── Presentations
-│   ├── Status-sigma2-2023
-│   │   └── Fig
-│   └── Status-sigma2-2025
-│       └── Figs
-└── References
-```
-The Tests directory contain subdirectories for each
-test, which again contains the results for each architecture.
-F.ex the Ac2d subdirectory contains:
-```
-.
-├── A100
-│   ├── C
-│   ├── Cuda
-│   ├── Cuda-um
-│   └── Eps
-├── AMD-EPYC-Turin
-│   ├── C
-│   └── Eps
-├── GH200
-│   ├── C
-│   ├── Cuda
-│   ├── Cuda-um
-│   └── Eps
-├── i7-14700HX
-│   ├── C
-│   └── Eps
-├── Mi250x
-│   ├── Eps
-│   ├── Hip
-│   └── Hip-um
-├── Plots
-├── RTX4070
-│   ├── C
-│   ├── Cuda
-│   ├── Cuda-um
-│   ├── Eps
-│   └── Python-cuda
-└── Scripts
+├── Bin
+│   └── __pycache__
+├── Src
+│   ├── Ac2d
+│   │   ├── C
+│   │   ├── Cuda
+│   │   ├── Cuda-um
+│   │   ├── Eps
+│   │   ├── Hip
+│   │   └── Hip-um
+│   ├── Diff
+│   │   ├── Cuda-um
+│   │   └── Eps
+│   └── Faxpy
+│       ├── Cuda-um
+│       ├── Eps
+│       └── F90
+└── Tests
+    ├── A100
+    ├── AMD-EPYC-Turin
+    │   ├── C
+    │   └── Eps
+    ├── GH200
+    ├── i7-14700HX
+    │   ├── C
+    │   └── Eps
+    ├── Mi250x
+    │   ├── Eps
+    │   ├── Hip
+    │   └── Hip-um
+    ├── Plots
+    └── RTX4070
+
 ```
 The plot directory contains scripts (and pdfs) for displaying
 the results.
